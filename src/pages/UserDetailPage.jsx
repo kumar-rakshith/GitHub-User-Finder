@@ -18,12 +18,12 @@ const UserDetailPage = ({ isDarkMode }) => {
       try {
         const userResponse = await axios.get(`https://api.github.com/users/${username}`, {
           headers: {
-           Authorization: `Bearer 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`, 
+          
           },
         });
         const reposResponse = await axios.get(`https://api.github.com/users/${username}/repos?per_page=100`, {
           headers: {
-            Authorization: `Bearer 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`, 
+             
           },
         });
         setUserData(userResponse.data);
