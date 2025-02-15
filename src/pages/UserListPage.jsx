@@ -21,7 +21,7 @@ const UserListPage = ({ isDarkMode }) => {
         try {
           const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}`, {
             headers: {
-              Authorization: `Bearer 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`, 
+              Authorization: `Bearer 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`, 
             },
           });
           const users = response.data.items;
@@ -31,7 +31,7 @@ const UserListPage = ({ isDarkMode }) => {
             users.map(async (user) => {
               const userDetails = await axios.get(`https://api.github.com/users/${user.login}`, {
                 headers: {
-                   Authorization: `Bearer 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`, 
+                   Authorization: `Bearer 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`, 
                 },
               });
               return {
