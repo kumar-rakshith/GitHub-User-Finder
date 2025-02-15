@@ -11,7 +11,7 @@ const HomePage = ({ isDarkMode }) => {
         
        
         return () => {
-            document.body.style.overflow = '';  l
+            document.body.style.overflow = '';  
         };
     }, []);
 
