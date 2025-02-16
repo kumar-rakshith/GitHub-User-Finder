@@ -19,13 +19,13 @@ const UserListPage = ({ isDarkMode }) => {
         setIsLoading(true);
         setError('');
         try {
-          const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}`);
+          const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}`,);
           const users = response.data.items;
     
        
           const updatedUsers = await Promise.all(
             users.map(async (user) => {
-              const userDetails = await axios.get(`https://api.github.com/users/${user.login}`);
+              const userDetails = await axios.get(`https://api.github.com/users/${user.login}`, );
               return {
                 ...user,
                 followers: userDetails.data.followers, 
