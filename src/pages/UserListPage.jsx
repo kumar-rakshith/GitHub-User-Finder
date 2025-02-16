@@ -19,21 +19,13 @@ const UserListPage = ({ isDarkMode }) => {
         setIsLoading(true);
         setError('');
         try {
-          const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}`, {
-            headers: {
-              Authorization: `Bearer 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`, 
-            },
-          });
+          const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}`);
           const users = response.data.items;
     
        
           const updatedUsers = await Promise.all(
             users.map(async (user) => {
-              const userDetails = await axios.get(`https://api.github.com/users/${user.login}`, {
-                headers: {
-                   Authorization: `Bearer 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`, 
-                },
-              });
+              const userDetails = await axios.get(`https://api.github.com/users/${user.login}`);
               return {
                 ...user,
                 followers: userDetails.data.followers, 
