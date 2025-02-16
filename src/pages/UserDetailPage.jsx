@@ -17,7 +17,7 @@ const UserDetailPage = ({ isDarkMode }) => {
       setError('');
       try {
         const userResponse = await axios.get(`https://api.github.com/users/${username}`);
-        const reposResponse = await axios.get(`https://api.github.com/users/${username}/repos?per_page=100`,);
+        const reposResponse = await axios.get(`https://api.github.com/users/${username}/repos?per_page=8`,);
         setUserData(userResponse.data);
         const sortedRepos = reposResponse.data.sort((a, b) => b.stargazers_count - a.stargazers_count);
         setReposData(sortedRepos.slice(0, 5)); 
