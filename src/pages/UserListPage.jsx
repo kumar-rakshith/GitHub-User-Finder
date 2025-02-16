@@ -19,7 +19,7 @@ const UserListPage = ({ isDarkMode }) => {
         setIsLoading(true);
         setError('');
         try {
-          const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}`,);
+          const response = await axios.get(`https://api.github.com/search/users?q=${searchQuery}&per_page=8`,);
           const users = response.data.items;
     
        
